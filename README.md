@@ -1,2 +1,8 @@
-# 2017-ClientBuildSource
- 4.0.0.0 fixed decompiled source code
+# 4.0.0.0 SRC
+
+src code for 4.0.0.0 swf (compilable)
+
+> [!NOTE]
+> spinning wheel may be broken idk lol
+
+
