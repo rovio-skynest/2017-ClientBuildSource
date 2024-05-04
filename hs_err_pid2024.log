@@ -1,0 +1,414 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1489040 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:390), pid=2024, tid=12452
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_40-b25) (build 1.8.0_40-b25)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.40-b25 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000016973000):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=12452, stack(0x0000000041a90000,0x0000000041b90000)]
+
+Stack: [0x0000000041a90000,0x0000000041b90000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x000000005dc2b47a
+C  0x000000005db797f3
+C  0x000000005db7a489
+C  0x000000005db717a5
+C  0x000000005d9cb9a2
+C  0x000000005d9cbe6c
+C  0x000000005dd64332
+C  0x000000005dddb615
+C  0x000000005dddc217
+C  0x000000005dd6a551
+C  0x000000005dd6cd52
+C  0x000000005dd500d2
+C  0x000000005d9a4312
+C  0x000000005d9a4c4f
+C  0x000000005db41914
+C  0x000000005db9848a
+C  [MSVCR100.dll+0x21d9f]
+C  [MSVCR100.dll+0x21e3b]
+C  [KERNEL32.DLL+0x126ad]
+C  [ntdll.dll+0x5a9f8]
+
+
+Current CompileTask:
+C2:  19347 2834       4       macromedia.asc.parser.Parser::parseFunctionCommon (267 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000001697e800 JavaThread "Service Thread" daemon [_thread_blocked, id=18940, stack(0x0000000041d90000,0x0000000041e90000)]
+  0x0000000016977800 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=2092, stack(0x0000000041c90000,0x0000000041d90000)]
+  0x0000000016974800 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=18116, stack(0x0000000041b90000,0x0000000041c90000)]
+=>0x0000000016973000 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=12452, stack(0x0000000041a90000,0x0000000041b90000)]
+  0x00000000414d2800 JavaThread "Attach Listener" daemon [_thread_blocked, id=11504, stack(0x0000000041990000,0x0000000041a90000)]
+  0x000000001695f000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=18968, stack(0x0000000041890000,0x0000000041990000)]
+  0x000000001695d000 JavaThread "Finalizer" daemon [_thread_blocked, id=17384, stack(0x0000000041390000,0x0000000041490000)]
+  0x0000000016954800 JavaThread "Reference Handler" daemon [_thread_blocked, id=19836, stack(0x0000000041290000,0x0000000041390000)]
+  0x0000000008965800 JavaThread "main" [_thread_in_native, id=6424, stack(0x0000000000050000,0x0000000000150000)]
+
+Other Threads:
+  0x000000001694a000 VMThread [stack: 0x0000000041190000,0x0000000041290000] [id=18808]
+  0x000000004153c000 WatcherThread [stack: 0x0000000041e90000,0x0000000041f90000] [id=17064]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 83456K, used 30311K [0x00000000eab00000, 0x00000000f1f80000, 0x0000000100000000)
+  eden space 54784K, 14% used [0x00000000eab00000,0x00000000eb2b0420,0x00000000ee080000)
+  from space 28672K, 78% used [0x00000000eff00000,0x00000000f14e9830,0x00000000f1b00000)
+  to   space 31232K, 0% used [0x00000000ee080000,0x00000000ee080000,0x00000000eff00000)
+ ParOldGen       total 84992K, used 64341K [0x00000000c0000000, 0x00000000c5300000, 0x00000000eab00000)
+  object space 84992K, 75% used [0x00000000c0000000,0x00000000c3ed55a8,0x00000000c5300000)
+ Metaspace       used 11860K, capacity 12034K, committed 12160K, reserved 1060864K
+  class space    used 1227K, capacity 1283K, committed 1408K, reserved 1048576K
+
+Card table byte_map: [0x0000000016370000,0x0000000016580000] byte_map_base: 0x0000000015d70000
+
+Marking Bits: (ParMarkBitMap*) 0x000000005e104040
+ Begin Bits: [0x000000003def0000, 0x000000003eef0000)
+ End Bits:   [0x000000003eef0000, 0x000000003fef0000)
+
+Polling page: 0x0000000003e10000
+
+CodeCache: size=245760Kb used=13220Kb max_used=14584Kb free=232539Kb
+ bounds [0x000000002eef0000, 0x000000002fd90000, 0x000000003def0000]
+ total_blobs=2635 nmethods=2293 adapters=252
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 18.543 Thread 0x0000000016977800 2829       3       java.io.FileInputStream::finalize (22 bytes)
+Event: 18.544 Thread 0x0000000016977800 nmethod 2829 0x000000002f4a1390 code [0x000000002f4a1500, 0x000000002f4a1728]
+Event: 18.584 Thread 0x0000000016977800 2830       3       flex2.compiler.io.FileUtil::openStream (52 bytes)
+Event: 18.585 Thread 0x0000000016977800 nmethod 2830 0x000000002f019510 code [0x000000002f0196a0, 0x000000002f019c28]
+Event: 18.591 Thread 0x0000000016977800 2831       3       macromedia.asc.parser.Scanner::nexttoken (7037 bytes)
+Event: 18.609 Thread 0x0000000016973000 2832       4       macromedia.asc.parser.InputBuffer::copyReplaceStringEscapes (103 bytes)
+Event: 18.615 Thread 0x0000000016973000 nmethod 2832 0x000000002f235690 code [0x000000002f235800, 0x000000002f235be8]
+Event: 18.628 Thread 0x0000000016977800 nmethod 2831 0x000000002fd48690 code [0x000000002fd4a8c0, 0x000000002fd639a8]
+Event: 18.628 Thread 0x0000000016974800 2833       4       macromedia.asc.parser.Scanner::nexttoken (7037 bytes)
+Event: 18.629 Thread 0x0000000016973000 2834       4       macromedia.asc.parser.Parser::parseFunctionCommon (267 bytes)
+
+GC Heap History (10 events):
+Event: 13.783 GC heap before
+{Heap before GC invocations=9 (full 1):
+ PSYoungGen      total 74752K, used 72101K [0x00000000eab00000, 0x00000000f0800000, 0x0000000100000000)
+  eden space 57856K, 100% used [0x00000000eab00000,0x00000000ee380000,0x00000000ee380000)
+  from space 16896K, 84% used [0x00000000ee380000,0x00000000ef169618,0x00000000ef400000)
+  to   space 13312K, 0% used [0x00000000ef400000,0x00000000ef400000,0x00000000f0100000)
+ ParOldGen       total 84992K, used 43992K [0x00000000c0000000, 0x00000000c5300000, 0x00000000eab00000)
+  object space 84992K, 51% used [0x00000000c0000000,0x00000000c2af6148,0x00000000c5300000)
+ Metaspace       used 11767K, capacity 11906K, committed 12160K, reserved 1060864K
+  class space    used 1227K, capacity 1283K, committed 1408K, reserved 1048576K
+Event: 13.826 GC heap after
+Heap after GC invocations=9 (full 1):
+ PSYoungGen      total 71168K, used 13282K [0x00000000eab00000, 0x00000000f0800000, 0x0000000100000000)
+  eden space 57856K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000ee380000)
+  from space 13312K, 99% used [0x00000000ef400000,0x00000000f00f8ba8,0x00000000f0100000)
+  to   space 16896K, 0% used [0x00000000ee380000,0x00000000ee380000,0x00000000ef400000)
+ ParOldGen       total 84992K, used 53125K [0x00000000c0000000, 0x00000000c5300000, 0x00000000eab00000)
+  object space 84992K, 62% used [0x00000000c0000000,0x00000000c33e1510,0x00000000c5300000)
+ Metaspace       used 11767K, capacity 11906K, committed 12160K, reserved 1060864K
+  class space    used 1227K, capacity 1283K, committed 1408K, reserved 1048576K
+}
+Event: 14.248 GC heap before
+{Heap before GC invocations=10 (full 1):
+ PSYoungGen      total 71168K, used 71138K [0x00000000eab00000, 0x00000000f0800000, 0x0000000100000000)
+  eden space 57856K, 100% used [0x00000000eab00000,0x00000000ee380000,0x00000000ee380000)
+  from space 13312K, 99% used [0x00000000ef400000,0x00000000f00f8ba8,0x00000000f0100000)
+  to   space 16896K, 0% used [0x00000000ee380000,0x00000000ee380000,0x00000000ef400000)
+ ParOldGen       total 84992K, used 53125K [0x00000000c0000000, 0x00000000c5300000, 0x00000000eab00000)
+  object space 84992K, 62% used [0x00000000c0000000,0x00000000c33e1510,0x00000000c5300000)
+ Metaspace       used 11769K, capacity 11906K, committed 12160K, reserved 1060864K
+  class space    used 1227K, capacity 1283K, committed 1408K, reserved 1048576K
+Event: 14.290 GC heap after
+Heap after GC invocations=10 (full 1):
+ PSYoungGen      total 74752K, used 10464K [0x00000000eab00000, 0x00000000f0800000, 0x0000000100000000)
+  eden space 57856K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000ee380000)
+  from space 16896K, 61% used [0x00000000ee380000,0x00000000eedb8258,0x00000000ef400000)
+  to   space 13312K, 0% used [0x00000000ef400000,0x00000000ef400000,0x00000000f0100000)
+ ParOldGen       total 84992K, used 57769K [0x00000000c0000000, 0x00000000c5300000, 0x00000000eab00000)
+  object space 84992K, 67% used [0x00000000c0000000,0x00000000c386a6d0,0x00000000c5300000)
+ Metaspace       used 11769K, capacity 11906K, committed 12160K, reserved 1060864K
+  class space    used 1227K, capacity 1283K, committed 1408K, reserved 1048576K
+}
+Event: 15.907 GC heap before
+{Heap before GC invocations=11 (full 1):
+ PSYoungGen      total 74752K, used 68320K [0x00000000eab00000, 0x00000000f0800000, 0x0000000100000000)
+  eden space 57856K, 100% used [0x00000000eab00000,0x00000000ee380000,0x00000000ee380000)
+  from space 16896K, 61% used [0x00000000ee380000,0x00000000eedb8258,0x00000000ef400000)
+  to   space 13312K, 0% used [0x00000000ef400000,0x00000000ef400000,0x00000000f0100000)
+ ParOldGen       total 84992K, used 57769K [0x00000000c0000000, 0x00000000c5300000, 0x00000000eab00000)
+  object space 84992K, 67% used [0x00000000c0000000,0x00000000c386a6d0,0x00000000c5300000)
+ Metaspace       used 11774K, capacity 11906K, committed 12160K, reserved 1060864K
+  class space    used 1227K, capacity 1283K, committed 1408K, reserved 1048576K
+Event: 15.932 GC heap after
+Heap after GC invocations=11 (full 1):
+ PSYoungGen      total 58368K, used 6240K [0x00000000eab00000, 0x00000000f2c80000, 0x0000000100000000)
+  eden space 45056K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000ed700000)
+  from space 13312K, 46% used [0x00000000ef400000,0x00000000efa18020,0x00000000f0100000)
+  to   space 29696K, 0% used [0x00000000ed700000,0x00000000ed700000,0x00000000ef400000)
+ ParOldGen       total 84992K, used 64333K [0x00000000c0000000, 0x00000000c5300000, 0x00000000eab00000)
+  object space 84992K, 75% used [0x00000000c0000000,0x00000000c3ed35a8,0x00000000c5300000)
+ Metaspace       used 11774K, capacity 11906K, committed 12160K, reserved 1060864K
+  class space    used 1227K, capacity 1283K, committed 1408K, reserved 1048576K
+}
+Event: 16.139 GC heap before
+{Heap before GC invocations=12 (full 1):
+ PSYoungGen      total 58368K, used 51296K [0x00000000eab00000, 0x00000000f2c80000, 0x0000000100000000)
+  eden space 45056K, 100% used [0x00000000eab00000,0x00000000ed700000,0x00000000ed700000)
+  from space 13312K, 46% used [0x00000000ef400000,0x00000000efa18020,0x00000000f0100000)
+  to   space 29696K, 0% used [0x00000000ed700000,0x00000000ed700000,0x00000000ef400000)
+ ParOldGen       total 84992K, used 64333K [0x00000000c0000000, 0x00000000c5300000, 0x00000000eab00000)
+  object space 84992K, 75% used [0x00000000c0000000,0x00000000c3ed35a8,0x00000000c5300000)
+ Metaspace       used 11774K, capacity 11906K, committed 12160K, reserved 1060864K
+  class space    used 1227K, capacity 1283K, committed 1408K, reserved 1048576K
+Event: 16.149 GC heap after
+Heap after GC invocations=12 (full 1):
+ PSYoungGen      total 74752K, used 7104K [0x00000000eab00000, 0x00000000f1b00000, 0x0000000100000000)
+  eden space 45056K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000ed700000)
+  from space 29696K, 23% used [0x00000000ed700000,0x00000000eddf0020,0x00000000ef400000)
+  to   space 28672K, 0% used [0x00000000eff00000,0x00000000eff00000,0x00000000f1b00000)
+ ParOldGen       total 84992K, used 64333K [0x00000000c0000000, 0x00000000c5300000, 0x00000000eab00000)
+  object space 84992K, 75% used [0x00000000c0000000,0x00000000c3ed35a8,0x00000000c5300000)
+ Metaspace       used 11774K, capacity 11906K, committed 12160K, reserved 1060864K
+  class space    used 1227K, capacity 1283K, committed 1408K, reserved 1048576K
+}
+Event: 18.469 GC heap before
+{Heap before GC invocations=13 (full 1):
+ PSYoungGen      total 74752K, used 52160K [0x00000000eab00000, 0x00000000f1b00000, 0x0000000100000000)
+  eden space 45056K, 100% used [0x00000000eab00000,0x00000000ed700000,0x00000000ed700000)
+  from space 29696K, 23% used [0x00000000ed700000,0x00000000eddf0020,0x00000000ef400000)
+  to   space 28672K, 0% used [0x00000000eff00000,0x00000000eff00000,0x00000000f1b00000)
+ ParOldGen       total 84992K, used 64333K [0x00000000c0000000, 0x00000000c5300000, 0x00000000eab00000)
+  object space 84992K, 75% used [0x00000000c0000000,0x00000000c3ed35a8,0x00000000c5300000)
+ Metaspace       used 11848K, capacity 12034K, committed 12160K, reserved 1060864K
+  class space    used 1227K, capacity 1283K, committed 1408K, reserved 1048576K
+Event: 18.541 GC heap after
+Heap after GC invocations=13 (full 1):
+ PSYoungGen      total 83456K, used 22438K [0x00000000eab00000, 0x00000000f1f80000, 0x0000000100000000)
+  eden space 54784K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000ee080000)
+  from space 28672K, 78% used [0x00000000eff00000,0x00000000f14e9830,0x00000000f1b00000)
+  to   space 31232K, 0% used [0x00000000ee080000,0x00000000ee080000,0x00000000eff00000)
+ ParOldGen       total 84992K, used 64341K [0x00000000c0000000, 0x00000000c5300000, 0x00000000eab00000)
+  object space 84992K, 75% used [0x00000000c0000000,0x00000000c3ed55a8,0x00000000c5300000)
+ Metaspace       used 11848K, capacity 12034K, committed 12160K, reserved 1060864K
+  class space    used 1227K, capacity 1283K, committed 1408K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 17.723 Thread 0x0000000008965800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000002f3d2990 method=macromedia.asc.parser.Scanner.nexttoken(Z)I @ 1849
+Event: 17.726 Thread 0x0000000008965800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000002fa58724 method=macromedia.asc.semantics.ConfigurationEvaluator.evaluate(Lmacromedia/asc/util/Context;Lmacromedia/asc/parser/ExpressionStatementNode;)Lmacromedia/asc/semantics/Value; @ 6
+Event: 17.726 Thread 0x0000000008965800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000002fa58724 method=macromedia.asc.semantics.ConfigurationEvaluator.evaluate(Lmacromedia/asc/util/Context;Lmacromedia/asc/parser/ExpressionStatementNode;)Lmacromedia/asc/semantics/Value; @ 6
+Event: 17.727 Thread 0x0000000008965800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000002fa23c88 method=flash.swf.tools.as3.EvaluatorAdapter.evaluate(Lmacromedia/asc/util/Context;Lmacromedia/asc/parser/ExpressionStatementNode;)Lmacromedia/asc/semantics/Value; @ 13
+Event: 17.727 Thread 0x0000000008965800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000002f2db3d4 method=flash.swf.tools.as3.EvaluatorAdapter.evaluate(Lmacromedia/asc/util/Context;Lmacromedia/asc/parser/SetExpressionNode;)Lmacromedia/asc/semantics/Value; @ 13
+Event: 17.727 Thread 0x0000000008965800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000002fa23c88 method=flash.swf.tools.as3.EvaluatorAdapter.evaluate(Lmacromedia/asc/util/Context;Lmacromedia/asc/parser/ExpressionStatementNode;)Lmacromedia/asc/semantics/Value; @ 13
+Event: 17.727 Thread 0x0000000008965800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000002f2db3d4 method=flash.swf.tools.as3.EvaluatorAdapter.evaluate(Lmacromedia/asc/util/Context;Lmacromedia/asc/parser/SetExpressionNode;)Lmacromedia/asc/semantics/Value; @ 13
+Event: 17.876 Thread 0x0000000008965800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000002f9b4c78 method=macromedia.asc.parser.Parser.checkAttribute(Lmacromedia/asc/parser/Node;)Z @ 249
+Event: 18.325 Thread 0x0000000008965800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000002f9348f4 method=macromedia.asc.parser.NodeFactory.callExpression(Lmacromedia/asc/parser/Node;Lmacromedia/asc/parser/ArgumentListNode;I)Lmacromedia/asc/parser/Node; @ 117
+Event: 18.590 Thread 0x0000000008965800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000002f4042c8 method=macromedia.asc.parser.Scanner.nexttoken(Z)I @ 1356
+
+Internal exceptions (10 events):
+Event: 10.758 Thread 0x0000000008965800 Exception <a 'java/lang/NullPointerException'> (0x00000000ec52d5e0) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u40\2855\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 10.766 Thread 0x0000000008965800 Implicit null exception at 0x000000002fb94b2e to 0x000000002fb99961
+Event: 10.766 Thread 0x0000000008965800 Exception <a 'java/lang/NullPointerException'> (0x00000000ec5d0e98) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u40\2855\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 10.767 Thread 0x0000000008965800 Implicit null exception at 0x000000002fb94b2e to 0x000000002fb99961
+Event: 10.767 Thread 0x0000000008965800 Exception <a 'java/lang/NullPointerException'> (0x00000000ec62baa0) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u40\2855\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 10.768 Thread 0x0000000008965800 Implicit null exception at 0x000000002fb94b2e to 0x000000002fb99961
+Event: 10.768 Thread 0x0000000008965800 Exception <a 'java/lang/NullPointerException'> (0x00000000ec65cfb0) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u40\2855\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 10.857 Thread 0x0000000008965800 Implicit null exception at 0x000000002fb94b2e to 0x000000002fb99961
+Event: 10.857 Thread 0x0000000008965800 Exception <a 'java/lang/NullPointerException'> (0x00000000ecbeef50) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u40\2855\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 11.001 Thread 0x0000000008965800 Implicit null exception at 0x000000002f61ba4f to 0x000000002f61bebd
+
+Events (10 events):
+Event: 18.545 Executing VM operation: RevokeBias done
+Event: 18.545 Executing VM operation: RevokeBias
+Event: 18.545 Executing VM operation: RevokeBias done
+Event: 18.545 Executing VM operation: BulkRevokeBias
+Event: 18.545 Executing VM operation: BulkRevokeBias done
+Event: 18.585 Thread 0x0000000016977800 flushing nmethod 0x000000002f00e4d0
+Event: 18.585 Thread 0x0000000016977800 flushing nmethod 0x000000002f025390
+Event: 18.590 Thread 0x0000000008965800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x000000002f4042c8
+Event: 18.590 Thread 0x0000000008965800 DEOPT PACKING pc=0x000000002f4042c8 sp=0x0000000000149da0
+Event: 18.590 Thread 0x0000000008965800 DEOPT UNPACKING pc=0x000000002ef3582a sp=0x0000000000149d70 mode 2
+
+
+Dynamic libraries:
+0x0000000000400000 - 0x000000000398f000 	C:\Program Files\Adobe\Adobe Flash CC 2015\Flash.exe
+0x00007fffc6570000 - 0x00007fffc6784000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007fffc4a60000 - 0x00007fffc4b22000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007fffc3a30000 - 0x00007fffc3dd3000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007fffc5ec0000 - 0x00007fffc5ec8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007fffc5de0000 - 0x00007fffc5e3e000 	C:\WINDOWS\System32\SHLWAPI.dll
+0x00007fffc4f10000 - 0x00007fffc4fb7000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007fffc5e40000 - 0x00007fffc5eb1000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007fffc6410000 - 0x00007fffc6527000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007fffc48b0000 - 0x00007fffc4a5b000 	C:\WINDOWS\System32\USER32.dll
+0x00007fffc3ff0000 - 0x00007fffc4016000 	C:\WINDOWS\System32\win32u.dll
+0x00007fffc4df0000 - 0x00007fffc4e19000 	C:\WINDOWS\System32\GDI32.dll
+0x00007fffbc270000 - 0x00007fffbc2a4000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007fffc3de0000 - 0x00007fffc3ef9000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007fffc4140000 - 0x00007fffc41da000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007fffc4020000 - 0x00007fffc4131000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007fffa2e20000 - 0x00007fffa2e4b000 	C:\WINDOWS\SYSTEM32\MSVFW32.dll
+0x00007fffc4b30000 - 0x00007fffc4c27000 	C:\WINDOWS\System32\COMDLG32.dll
+0x00007fffc6360000 - 0x00007fffc640e000 	C:\WINDOWS\System32\advapi32.dll
+0x00007fffc5fd0000 - 0x00007fffc6359000 	C:\WINDOWS\System32\combase.dll
+0x00007fffc5f20000 - 0x00007fffc5fc4000 	C:\WINDOWS\System32\sechost.dll
+0x00007fffc5c60000 - 0x00007fffc5d51000 	C:\WINDOWS\System32\shcore.dll
+0x00007fffba8e0000 - 0x00007fffba8ea000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007fff91130000 - 0x00007fff91154000 	C:\WINDOWS\SYSTEM32\AVIFIL32.dll
+0x00007fffc4350000 - 0x00007fffc44ec000 	C:\WINDOWS\System32\ole32.dll
+0x00007fff904b0000 - 0x00007fff904e8000 	C:\WINDOWS\SYSTEM32\oledlg.dll
+0x00007fffc5440000 - 0x00007fffc5c3a000 	C:\WINDOWS\System32\SHELL32.dll
+0x0000000012000000 - 0x00000000122a9000 	C:\Program Files\Adobe\Adobe Flash CC 2015\xerces-c_3_1.dll
+0x00007fff74770000 - 0x00007fff749a9000 	C:\Program Files\Adobe\Adobe Flash CC 2015\AdobeOwl.dll
+0x00007fff1a8b0000 - 0x00007fff1f397000 	C:\Program Files\Adobe\Adobe Flash CC 2015\AdobePSL.dll
+0x00007fff888c0000 - 0x00007fff888e8000 	C:\Program Files\Adobe\Adobe Flash CC 2015\ahclient.dll
+0x00007fff6fcc0000 - 0x00007fff6ffcc000 	C:\Program Files\Adobe\Adobe Flash CC 2015\aflamingo.dll
+0x00007fffc44f0000 - 0x00007fffc45c7000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007fff7c640000 - 0x00007fff7c6ee000 	C:\Program Files\Adobe\Adobe Flash CC 2015\LogSession.dll
+0x00007fff73ad0000 - 0x00007fff73d72000 	C:\Program Files\Adobe\Adobe Flash CC 2015\amtlib.dll
+0x00007fff2daf0000 - 0x00007fff2dff9000 	C:\Program Files\Adobe\Adobe Flash CC 2015\PlugPlugOwl.dll
+0x00007fff87050000 - 0x00007fff870be000 	C:\Program Files\Adobe\Adobe Flash CC 2015\BIB.dll
+0x00007fff834f0000 - 0x00007fff83542000 	C:\Program Files\Adobe\Adobe Flash CC 2015\BIBUtils.dll
+0x00007fff75e10000 - 0x00007fff75fc2000 	C:\Program Files\Adobe\Adobe Flash CC 2015\ACE.dll
+0x00007fffc4fc0000 - 0x00007fffc5434000 	C:\WINDOWS\System32\SETUPAPI.dll
+0x00007fff6a4c0000 - 0x00007fff6a90e000 	C:\Program Files\Adobe\Adobe Flash CC 2015\CoolType.dll
+0x00007fff2d310000 - 0x00007fff2daea000 	C:\Program Files\Adobe\Adobe Flash CC 2015\AGM.dll
+0x00007fffc41e0000 - 0x00007fffc4347000 	C:\WINDOWS\System32\CRYPT32.dll
+0x00007fff79820000 - 0x00007fff79891000 	C:\Program Files\Adobe\Adobe Flash CC 2015\ARE.dll
+0x00007fff74620000 - 0x00007fff7476d000 	C:\Program Files\Adobe\Adobe Flash CC 2015\PDFPort.dll
+0x00007fff2cdc0000 - 0x00007fff2d303000 	C:\Program Files\Adobe\Adobe Flash CC 2015\MPS.dll
+0x00007fff2c4a0000 - 0x00007fff2cdb9000 	C:\Program Files\Adobe\Adobe Flash CC 2015\AdobePDFL.dll
+0x00007fff4d0d0000 - 0x00007fff4d0ee000 	C:\WINDOWS\SYSTEM32\MSACM32.dll
+0x00007fff78720000 - 0x00007fff787c6000 	C:\WINDOWS\SYSTEM32\MSVCP120.dll
+0x00007fffa09b0000 - 0x00007fffa0a9f000 	C:\WINDOWS\SYSTEM32\MSVCR120.dll
+0x00007fffa67c0000 - 0x00007fffa69af000 	C:\WINDOWS\SYSTEM32\urlmon.dll
+0x00007fff982f0000 - 0x00007fff983a3000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_5.82.22621.436_none_fb2b38f27923daed\COMCTL32.dll
+0x00007fffa0d20000 - 0x00007fffa1214000 	C:\WINDOWS\SYSTEM32\WININET.dll
+0x0000000061d70000 - 0x0000000061e42000 	C:\WINDOWS\SYSTEM32\MSVCR100.dll
+0x00007fffbd790000 - 0x00007fffbd8c7000 	C:\WINDOWS\SYSTEM32\WINHTTP.dll
+0x00007fff76840000 - 0x00007fff768e7000 	C:\WINDOWS\SYSTEM32\MSVCP110.dll
+0x00007fff77020000 - 0x00007fff770f4000 	C:\WINDOWS\SYSTEM32\MSVCR110.dll
+0x00007fff79ea0000 - 0x00007fff7a059000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.22621.1830_none_57fad50ace1810d9\gdiplus.dll
+0x00007fff82b80000 - 0x00007fff82bbf000 	C:\Program Files\Adobe\Adobe Flash CC 2015\tbb.dll
+0x00007fff796d0000 - 0x00007fff7973d000 	C:\Program Files\Adobe\Adobe Flash CC 2015\VulcanControl.dll
+0x00007fffc2460000 - 0x00007fffc248d000 	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+0x00007fff71480000 - 0x00007fff71562000 	C:\Program Files\Adobe\Adobe Flash CC 2015\AdobeXMP.dll
+0x00007fffa64d0000 - 0x00007fffa6781000 	C:\WINDOWS\SYSTEM32\iertutil.dll
+0x00007fff78b20000 - 0x00007fff78bb1000 	C:\Program Files\Adobe\Adobe Flash CC 2015\VulcanMessage5.dll
+0x00007fff72f40000 - 0x00007fff730a8000 	C:\Program Files\Adobe\Adobe Flash CC 2015\AIDE.dll
+0x00007fff982b0000 - 0x00007fff982ce000 	C:\WINDOWS\SYSTEM32\MPR.dll
+0x000000005f470000 - 0x000000005f4ab000 	C:\Program Files\Adobe\Adobe Flash CC 2015\AXE8SharedExpat.dll
+0x00007fff6f5e0000 - 0x00007fff6f6ca000 	C:\Program Files\Adobe\Adobe Flash CC 2015\JP2KLib.dll
+0x00007fffa6790000 - 0x00007fffa67b8000 	C:\WINDOWS\SYSTEM32\srvcli.dll
+0x00007fff90a80000 - 0x00007fff90b1f000 	C:\WINDOWS\SYSTEM32\WINSPOOL.DRV
+0x00007fffc2450000 - 0x00007fffc245c000 	C:\WINDOWS\SYSTEM32\netutils.dll
+0x00007fffc3660000 - 0x00007fffc36ae000 	C:\WINDOWS\SYSTEM32\cfgmgr32.DLL
+0x0000000004020000 - 0x000000000402b000 	C:\Program Files\Adobe\Adobe Flash CC 2015\boost_system.dll
+0x0000000004060000 - 0x0000000004084000 	C:\Program Files\Adobe\Adobe Flash CC 2015\boost_threads.dll
+0x0000000004040000 - 0x0000000004056000 	C:\Program Files\Adobe\Adobe Flash CC 2015\boost_date_time.dll
+0x00000000040b0000 - 0x00000000048a5000 	C:\Program Files\Adobe\Adobe Flash CC 2015\dvaui.dll
+0x00000000048b0000 - 0x0000000004be9000 	C:\Program Files\Adobe\Adobe Flash CC 2015\dvacore.dll
+0x0000000004bf0000 - 0x0000000004d85000 	C:\Program Files\Adobe\Adobe Flash CC 2015\dvaworkspace.dll
+0x0000000004d90000 - 0x0000000004f20000 	C:\Program Files\Adobe\Adobe Flash CC 2015\exo.dll
+0x0000000004f40000 - 0x0000000004f7b000 	C:\Program Files\Adobe\Adobe Flash CC 2015\dvaunittesting.dll
+0x0000000004f80000 - 0x0000000004fad000 	C:\Program Files\Adobe\Adobe Flash CC 2015\dvatexteditor.dll
+0x0000000004fd0000 - 0x00000000050a4000 	C:\Program Files\Adobe\Adobe Flash CC 2015\FlashIK.dll
+0x00000000050b0000 - 0x000000000556b000 	C:\Program Files\Adobe\Adobe Flash CC 2015\dvaadameve.dll
+0x0000000005580000 - 0x00000000055b4000 	C:\Program Files\Adobe\Adobe Flash CC 2015\PFF.dll
+0x00000000055d0000 - 0x00000000056b4000 	C:\Program Files\Adobe\Adobe Flash CC 2015\boost_regex.dll
+0x00000000056d0000 - 0x0000000005710000 	C:\Program Files\Adobe\Adobe Flash CC 2015\mfcdata.dll
+0x0000000005720000 - 0x0000000005746000 	C:\Program Files\Adobe\Adobe Flash CC 2015\boost_filesystem.dll
+0x0000000005760000 - 0x0000000005819000 	C:\Program Files\Adobe\Adobe Flash CC 2015\flashplayercore.dll
+0x0000000005840000 - 0x0000000005e8f000 	C:\Program Files\Adobe\Adobe Flash CC 2015\flverify.dll
+0x0000000005e90000 - 0x0000000005fe0000 	C:\Program Files\Adobe\Adobe Flash CC 2015\cloudsync.dll
+0x0000000005ff0000 - 0x000000000600a000 	C:\Program Files\Adobe\Adobe Flash CC 2015\boost_signals.dll
+0x0000000006020000 - 0x000000000602d000 	C:\Program Files\Adobe\Adobe Flash CC 2015\metromode.dll
+0x00007fffc0b40000 - 0x00007fffc0d6e000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+0x00007fff872c0000 - 0x00007fff873c0000 	C:\WINDOWS\SYSTEM32\OPENGL32.dll
+0x00007fff85a80000 - 0x00007fff85ae9000 	C:\WINDOWS\SYSTEM32\OLEACC.dll
+0x00007fff87290000 - 0x00007fff872bd000 	C:\WINDOWS\SYSTEM32\GLU32.dll
+0x00007fffc1340000 - 0x00007fffc1378000 	C:\WINDOWS\SYSTEM32\dxcore.dll
+0x00007fffc5d80000 - 0x00007fffc5db1000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007fffc1930000 - 0x00007fffc21fe000 	C:\WINDOWS\SYSTEM32\windows.storage.dll
+0x00007fffc17f0000 - 0x00007fffc192e000 	C:\WINDOWS\SYSTEM32\wintypes.dll
+0x00007fffc38a0000 - 0x00007fffc38c1000 	C:\WINDOWS\SYSTEM32\profapi.dll
+0x00007fffc29e0000 - 0x00007fffc2a14000 	C:\WINDOWS\SYSTEM32\ntmarta.dll
+0x00007fffc3120000 - 0x00007fffc312c000 	C:\WINDOWS\SYSTEM32\CRYPTBASE.DLL
+0x00007fffc3f70000 - 0x00007fffc3feb000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007fffc29c0000 - 0x00007fffc29d8000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007fffc4700000 - 0x00007fffc47b0000 	C:\WINDOWS\System32\clbcatq.dll
+0x00007fffb1170000 - 0x00007fffb118d000 	C:\WINDOWS\SYSTEM32\amsi.dll
+0x00007fffc2fa0000 - 0x00007fffc2fc8000 	C:\WINDOWS\SYSTEM32\USERENV.dll
+0x00007fffb10a0000 - 0x00007fffb111b000 	C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.23050.5-0\MpOav.dll
+0x00007fffc0f30000 - 0x00007fffc0fdb000 	C:\WINDOWS\system32\uxtheme.dll
+0x00007fffc45d0000 - 0x00007fffc46f7000 	C:\WINDOWS\System32\MSCTF.dll
+0x00007fff6e5f0000 - 0x00007fff6e85c000 	C:\WINDOWS\System32\msxml3.dll
+0x00007fffc3340000 - 0x00007fffc3368000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007fffbf3a0000 - 0x00007fffbf550000 	C:\WINDOWS\SYSTEM32\WindowsCodecs.dll
+0x00007fffbf550000 - 0x00007fffbf7b7000 	C:\WINDOWS\SYSTEM32\DWrite.dll
+0x00007fffa5620000 - 0x00007fffa56d0000 	C:\WINDOWS\SYSTEM32\TextShaping.dll
+0x00007fff79460000 - 0x00007fff794da000 	C:\Program Files\Adobe\Adobe Flash CC 2015\AdobePIP.dll
+0x00007fff9fde0000 - 0x00007fffa006e000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.1465_none_271271ab738361f1\comctl32.dll
+0x00007fff83090000 - 0x00007fff830d4000 	C:\WINDOWS\SYSTEM32\msIso.dll
+0x00007fff6c800000 - 0x00007fff6ca02000 	C:\Program Files (x86)\Common Files\Adobe\OOBE\PDApp\P7\x64\IMSLib.dll
+0x000000000c750000 - 0x000000000c913000 	C:\Program Files\Adobe\Adobe Flash CC 2015\Common\Configuration\External Libraries\FLAirAndroidExt.dll
+0x00007fff280b0000 - 0x00007fff28618000 	C:\WINDOWS\SYSTEM32\mfc120u.dll
+0x000000000c940000 - 0x000000000cb04000 	C:\Program Files\Adobe\Adobe Flash CC 2015\Common\Configuration\External Libraries\FLAirDesktopExt.dll
+0x000000000cb20000 - 0x000000000cb72000 	C:\Program Files\Adobe\Adobe Flash CC 2015\Common\Configuration\External Libraries\FLBridge.dll
+0x000000000cb90000 - 0x000000000cc33000 	C:\Program Files\Adobe\Adobe Flash CC 2015\Common\Configuration\External Libraries\FLCreateJS.dll
+0x00007fff258a0000 - 0x00007fff26cba000 	C:\Program Files\Adobe\Adobe Flash CC 2015\aflame.dll
+0x00007fff45780000 - 0x00007fff45926000 	C:\Program Files\Adobe\Adobe Flash CC 2015\AdobeLinguistic.dll
+0x000000000cc70000 - 0x000000000cc8b000 	C:\Program Files\Adobe\Adobe Flash CC 2015\Common\Configuration\External Libraries\FLfile.dll
+
+VM Arguments:
+jvm_args: -Djava.library.path=C:\Program Files\Common Files\Adobe\Adobe Flash CC 2015\jre\bin -Djava.Home=C:\Program Files\Common Files\Adobe\Adobe Flash CC 2015\jre -Xbootclasspath/a: ﻿-Djava.awt.headless=true -Xmx1024m 
+java_command: <unknown>
+java_class_path (initial): C:\Program Files\Adobe\Adobe Flash CC 2015\Common\Configuration\ActionScript 3.0\bin\;C:\Program Files\Adobe\Adobe Flash CC 2015\Common\Configuration\ActionScript 3.0\bin\asc_authoring.jar;C:\Program Files\Adobe\Adobe Flash CC 2015\Common\Configuration\ActionScript 3.0\bin\fdb_authoring.jar;C:\Program Files\Adobe\Adobe Flash CC 2015\Common\Configuration\CodeModel\commands.jar;C:\Program Files\Adobe\Adobe Flash CC 2015\Common\Configuration\CodeModel\org.apache.felix.framework-1.8.1.jar;C:\Program Files\Adobe\Adobe Flash CC 2015\Common\Configuration\CodeModel\codemodel_host.jar
+Launcher Type: generic
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Common Files\Adobe\Adobe Flash CC 2015\jre
+PATH=C:\Program Files\Common Files\Adobe\Adobe Flash CC 2015\jre\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;D:\Program Files\xampp\php;D:\Program Files\composer;D:\xampp\php;D:\composer;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\cloudflared\.;C:\Users\PC\AppData\Local\Microsoft\WindowsApps;C:\Users\PC\.dotnet\tools;D:\Program Files\Microsoft VS Code\bin;C:\Users\PC\AppData\Roaming\Composer\vendor\bin;C:\Users\PC\AppData\Roaming\npm
+USERNAME=PC
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 22621 (10.0.22621.1835)
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 140 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 3825288k(20172k free), swap 15359624k(4900k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.40-b25) for windows-amd64 JRE (1.8.0_40-b25), built on Feb 10 2015 21:53:57 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Mon Jun 19 21:45:29 2023
+elapsed time: 19 seconds (0d 0h 0m 19s)
+
