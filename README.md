@@ -1,8 +1,10 @@
-# 4.0.0.0 SRC
+# FB Core Client
 
-src code for 4.0.0.0 swf (compilable)
+**AngryBirdsFacebook.swf**
 
-> [!NOTE]
-> use V3 API for spinning wheel, V2 will break the game (not public)
+**TO-DO (Teams):**
+- Conduct UX (User Experience) research
+- Upgrade the UI (User Interface)
+- Review the future "Bird Cup" feature
 
-
+**Note:** Office hours from 1 PM to 5 PM will focus on User Experience R&D.
