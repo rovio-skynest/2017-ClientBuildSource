@@ -26,9 +26,7 @@
    public class RovioNewsManager
    {
       
-      //public static const SERVER_URL:String = "https://cloud.rovio.com";
-	  
-	  public static const SERVER_URL:String = AngryBirdsBase.SERVER_ROOT + "/news";
+      public static const SERVER_URL:String = "https://cloud.rovio.com";
 	   
       public static const ADS_SERVICE_URL:String = "/ads/1.0/wall";
       
@@ -74,10 +72,9 @@
          super();
          this.mUIView = uiView;
          this.mNewsImageManager = new NewsImageLoaderManager();
-		 // NOTE: we don't need these
-		 /*Security.loadPolicyFile("http://cloud.rovio.com/crossdomain.xml");
+		 Security.loadPolicyFile("http://cloud.rovio.com/crossdomain.xml");
          Security.loadPolicyFile("http://news-assets.rovio.com/crossdomain.xml");
-         Security.loadPolicyFile("http://ads.cdn.rovio.com/crossdomain.xml");*/
+         Security.loadPolicyFile("http://ads.cdn.rovio.com/crossdomain.xml");
          this.mAccessTokenLoaderCounter = 0;
       }
       
@@ -93,15 +90,15 @@
             this.showPlaceholderAd();
             return;
          }
-         /*var accessToken:String = FacebookAnalyticsCollector.getInstance().getAccessToken();
+         var accessToken:String = FacebookAnalyticsCollector.getInstance().getAccessToken();
          if(accessToken)
-         {*/
+         {
             this.requestNews("");
-         /*}
+         }
          else
          {
             this.showPlaceholderAd();
-         }*/
+         }
       }
       
       private function requestNews(accessToken:String) : void
